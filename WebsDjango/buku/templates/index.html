@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <title>Data Buku</title>
+
+    <link rel="stylesheet" href="{% static 'css/styles.css %}">
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap/bootstrap.css' %}">
+
+</head>
+<body>
+    <img id="banner" src="{% static 'buku/img/crud.jpg' %}" alt="">
+    <div id="menu">
+        <ul>
+            <li>
+                <li> <a href="/">Home</a> </li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/buku/">Data buku</a></li>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <br>
+        {% for tampungPost in TampungPost %}
+        <h3>{{tampungPost.judul}}</h3>
+        <p>{{tampungPost.sinopsis}}</p>
+        {% endfor %}
+    </div>
+
+    <footer class="footer"></footer>
+</body>
